@@ -10,29 +10,34 @@ import android.graphics.Color;
 public class MNCalendarVerticalConfig {
 
     //是否显示阴历
-    private boolean mnCalendar_showLunar = true;
+    private boolean mnCalendar_showLunar          = true;
     //是否显示星期栏
-    private boolean mnCalendar_showWeek = true;
+    private boolean mnCalendar_showWeek           = true;
     //每个月标题的样式
-    private String mnCalendar_titleFormat = "yyyy年MM月";
+    private String  mnCalendar_titleFormat        = "yyyy年MM月";
     //每个月标题的颜色
-    private int mnCalendar_colorTitle = Color.parseColor("#282828");
+    private int     mnCalendar_colorTitle         = Color.parseColor("#282828");
     //星期栏的颜色
-    private int mnCalendar_colorWeek = Color.parseColor("#5E5E5E");
+    private int     mnCalendar_colorWeek          = Color.parseColor("#5E5E5E");
     //阳历的颜色
-    private int mnCalendar_colorSolar = Color.parseColor("#282828");
+    private int     mnCalendar_colorSolar         = Color.parseColor("#282828");
     //阴历的颜色
-    private int mnCalendar_colorLunar = Color.parseColor("#979797");
+    private int     mnCalendar_colorLunar         = Color.parseColor("#979797");
     //今天之前的日期的颜色
-    private int mnCalendar_colorBeforeToday = Color.parseColor("#979797");
+    private int     mnCalendar_colorBeforeToday   = Color.parseColor("#979797");
     //开始结束的背景颜色
-    private int mnCalendar_colorStartAndEndBg = Color.parseColor("#df0e0e0e");
+    private int     mnCalendar_colorStartAndEndBg = Color.parseColor("#df0e0e0e");
     //区间中间的背景颜色
-    private int mnCalendar_colorRangeBg = Color.parseColor("#d0353535");
+    private int     mnCalendar_colorRangeBg       = Color.parseColor("#d0353535");
     //区间文字的颜色
-    private int mnCalendar_colorRangeText = Color.parseColor("#FFFFFF");
+    private int     mnCalendar_colorRangeText     = Color.parseColor("#FFFFFF");
     //显示多少月(默认6个月)
-    private int mnCalendar_countMonth = 6;
+    private int     mnCalendar_countMonth         = 6;
+
+    // 开始时间
+    private String mnCalendar_startDate = "";
+    // 结束时间
+    private String mnCalendar_endDate   = "";
 
     private MNCalendarVerticalConfig() {
     }
@@ -133,6 +138,20 @@ public class MNCalendarVerticalConfig {
         this.mnCalendar_countMonth = mnCalendar_countMonth;
     }
 
+    // 2020-08-18  2020-08-20
+    private void setMnCalendar_selectRange(String startDate, String endDate) {
+        this.mnCalendar_startDate = startDate;
+        this.mnCalendar_endDate = endDate;
+    }
+
+    public String getMnCalendar_startDate() {
+        return mnCalendar_startDate;
+    }
+
+    public String getMnCalendar_endDate() {
+        return mnCalendar_endDate;
+    }
+
     @Override
     public String toString() {
         return "MNCalendarVerticalConfig{" +
@@ -225,6 +244,12 @@ public class MNCalendarVerticalConfig {
 
         public Builder setMnCalendar_countMonth(int mnCalendar_countMonth) {
             mnCalendarConfig.setMnCalendar_countMonth(mnCalendar_countMonth);
+            return this;
+        }
+
+        // 2020-08-18  2020-08-20
+        public Builder setMnCalendar_selectRange(String startDate, String endDate) {
+            mnCalendarConfig.setMnCalendar_selectRange(startDate, endDate);
             return this;
         }
 

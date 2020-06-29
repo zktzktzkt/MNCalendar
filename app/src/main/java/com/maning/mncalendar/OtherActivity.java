@@ -29,7 +29,10 @@ public class OtherActivity extends AppCompatActivity {
         context = this;
 
         mnCalendarVertical = (MNCalendarVertical) findViewById(R.id.mnCalendarVertical);
-
+        MNCalendarVerticalConfig mnCalendarVerticalConfig = new MNCalendarVerticalConfig.Builder()
+                .setMnCalendar_selectRange("2020-08-10", "2020-08-20")
+                .build();
+        mnCalendarVertical.setConfig(mnCalendarVerticalConfig);
         /**
          * 区间选取完成监听
          */
@@ -37,7 +40,7 @@ public class OtherActivity extends AppCompatActivity {
             @Override
             public void onRangeDate(Date startDate, Date endDate) {
                 String startTime = sdf.format(startDate);
-                String endTime = sdf.format(endDate);
+                String endTime   = sdf.format(endDate);
                 Toast.makeText(context, "开始日期:" + startTime + ",结束日期:" + endTime, Toast.LENGTH_SHORT).show();
             }
         });

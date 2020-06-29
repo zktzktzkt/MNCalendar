@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AndroidStudioProjects-MNCalendar.iml" filepath="$PROJECT_DIR$/.idea/modules/AndroidStudioProjects-MNCalendar.iml" group="MNCalendar" />
       <module fileurl="file://$PROJECT_DIR$/MNCalendar.iml" filepath="$PROJECT_DIR$/MNCalendar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MNCalendar-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MNCalendar-app.iml" group="MNCalendar/app" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/calendarlibrary/calendarlibrary.iml" filepath="$PROJECT_DIR$/calendarlibrary/calendarlibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/calendarlibrary/com.github.maning0303-calendarlibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/calendarlibrary/com.github.maning0303-calendarlibrary.iml" group="MNCalendar/calendarlibrary" />
     </modules>
   </component>
 </project>

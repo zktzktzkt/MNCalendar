@@ -1,22 +1,17 @@
 package com.maning.calendarlibrary.adapter;
 
 import android.content.Context;
-import android.graphics.drawable.GradientDrawable;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.maning.calendarlibrary.R;
-import com.maning.calendarlibrary.listeners.OnCalendarItemClickListener;
 import com.maning.calendarlibrary.listeners.OnCalendarRangeChooseListener;
-import com.maning.calendarlibrary.model.MNCalendarConfig;
 import com.maning.calendarlibrary.model.MNCalendarItemModel;
 import com.maning.calendarlibrary.model.MNCalendarVerticalConfig;
-import com.maning.calendarlibrary.utils.LunarCalendarUtils;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -41,7 +36,7 @@ public class MNCalendarVerticalAdapter extends RecyclerView.Adapter<RecyclerView
     private MNCalendarVerticalConfig mnCalendarVerticalConfig;
 
     public Date startDate = null;
-    public Date endDate = null;
+    public Date endDate   = null;
 
     public MNCalendarVerticalAdapter(Context context, HashMap<String, ArrayList<MNCalendarItemModel>> mDatas, Calendar currentCalendar, MNCalendarVerticalConfig mnCalendarVerticalConfig) {
         this.context = context;
@@ -69,8 +64,8 @@ public class MNCalendarVerticalAdapter extends RecyclerView.Adapter<RecyclerView
             Date titleDate = calendarTitle.getTime();
 
             //设置标题的格式
-            String mnCalendar_titleFormat = mnCalendarVerticalConfig.getMnCalendar_titleFormat();
-            SimpleDateFormat sdf = new SimpleDateFormat(mnCalendar_titleFormat);
+            String           mnCalendar_titleFormat = mnCalendarVerticalConfig.getMnCalendar_titleFormat();
+            SimpleDateFormat sdf                    = new SimpleDateFormat(mnCalendar_titleFormat);
             myViewHolder.tv_item_title.setText(sdf.format(titleDate));
 
             //设置标题的颜色
@@ -98,7 +93,7 @@ public class MNCalendarVerticalAdapter extends RecyclerView.Adapter<RecyclerView
 
     private static class MyViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView tv_item_title;
+        private TextView     tv_item_title;
         private RecyclerView recyclerViewItem;
 
         public MyViewHolder(View itemView) {
@@ -124,11 +119,15 @@ public class MNCalendarVerticalAdapter extends RecyclerView.Adapter<RecyclerView
     }
 
     public void updateDatas(HashMap<String, ArrayList<MNCalendarItemModel>> mDatas, Calendar currentCalendar, MNCalendarVerticalConfig mnCalendarVerticalConfig) {
+        updateDatas(mDatas, currentCalendar, mnCalendarVerticalConfig, null, null);
+    }
+
+    public void updateDatas(HashMap<String, ArrayList<MNCalendarItemModel>> mDatas, Calendar currentCalendar, MNCalendarVerticalConfig mnCalendarVerticalConfig, Date _startDate, Date _endDate) {
         this.mDatas = mDatas;
         this.currentCalendar = currentCalendar;
         this.mnCalendarVerticalConfig = mnCalendarVerticalConfig;
-        this.startDate = null;
-        this.endDate = null;
+        this.startDate = _startDate;
+        this.endDate = _endDate;
         notifyDataSetChanged();
     }
 

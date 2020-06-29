@@ -36,4 +36,11 @@ public class MNCalendarItemModel {
         mLunar = lunar;
     }
 
+    @Override
+    public String toString() {
+        return "MNCalendarItemModel{" +
+                "mDate=" + mDate +
+                ", mLunar=" + mLunar +
+                '}';
+    }
 }
