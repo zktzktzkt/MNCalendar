@@ -1,3 +1,8 @@
+## 修改记录
+- MNCalendarVerticalConfig 新增`setMnCalendar_selectRange("2020-08-10", "2020-08-20")`方法，可以一进来就选中某个范围的时间
+
+
+
 # MNCalendar
 一个简单的日历控件,高度颜色自定义,水平方向和垂直方向,支持手势滑动,支持区间范围选择
 [![](https://jitpack.io/v/maning0303/MNCalendar.svg)](https://jitpack.io/#maning0303/MNCalendar)
